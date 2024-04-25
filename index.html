@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC2 and PuTTY Tutorial</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-4">Understanding Amazon EC2</h1>
+        <p class="mb-4">Amazon EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud. It allows you to quickly scale your computing capacity up or down according to your needs.</p>
+
+        <h2 class="text-2xl font-bold mb-4">Using PuTTY to Connect to EC2</h2>
+        <p class="mb-4">PuTTY is a free and open-source terminal emulator, serial console, and network file transfer application. Here's how you can use PuTTY to connect to your EC2 instance:</p>
+
+        <ol class="list-decimal ml-6 mb-4">
+            <li>Download and install PuTTY from <a href="https://www.putty.org/">here</a>.</li>
+            <li>Open PuTTY and enter your EC2 instance's public IP address or DNS name.</li>
+            <li>Under Connection > SSH > Auth, browse and select your private key file (.pem) used to launch your EC2 instance.</li>
+            <li>Click "Open" to establish the connection.</li>
+        </ol>
+
+        <h2 class="text-2xl font-bold mb-4">Uploading Files to EC2 Instance</h2>
+        <p class="mb-4">To upload files to your EC2 instance, you can use the Secure Copy Protocol (SCP) or a similar tool. Here's a basic example using SCP:</p>
+
+        <ol class="list-decimal ml-6 mb-4">
+            <li>Open a terminal or command prompt on your local machine.</li>
+            <li>Use the following command to upload a file to your EC2 instance:</li>
+            <pre class="bg-gray-200 p-2 rounded-md">
+scp -i /path/to/private-key.pem /path/to/local/file username@ec2-instance-ip:/path/to/destination</pre>
+            <li>Replace <code>/path/to/private-key.pem</code>, <code>/path/to/local/file</code>, <code>username</code>, <code>ec2-instance-ip</code>, and <code>/path/to/destination</code> with appropriate values.</li>
+            <li>Press Enter and enter your SSH key passphrase (if applicable) to complete the upload.</li>
+        </ol>
+
+        <p class="mt-8">This is a basic overview of using Amazon EC2, PuTTY, and uploading files to an EC2 instance. Feel free to explore more advanced features and functionalities!</p>
+    </div>
+</body>
+
+</html>
